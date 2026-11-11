@@ -1,0 +1,76 @@
+# ------------------------------------------------------------
+# Third-party models (download them yourself, see README:
+# "Download required files")
+# ------------------------------------------------------------
+
+# Google GNM repository clone (model code + weights)
+/gnm/
+
+# MediaPipe Face Landmarker model
+/models/*.task
+
+# Empty placeholder folder
+/third_party/
+
+# ------------------------------------------------------------
+# Data: photos, renders and fitted outputs of real people
+# ------------------------------------------------------------
+
+# Ignore everything in data/ (photos, overlay / diagnostic /
+# result images, fitted .obj / .npz meshes, data/tests/ ...)
+/data/*
+
+# ...except the MediaPipe -> GNM landmark correspondence
+!/data/head_dense_468_v2.txt
+!/data/head_dense_468_v2_nowarp.txt
+# Photo sources (label, Pixabay URL, contributor, license)
+!/data/SOURCES.md
+!/data/.gitkeep
+
+# Batch results: per-photo folders (overlays, meshes, landmark
+# coordinates, logs) and the photo grids show the photos.
+# (/results/*/* instead of /results/*/ so single files can be
+# re-included below.) metrics.md / metrics.csv are published.
+/results/*/*
+/results/*.png
+
+# Never publish images, meshes or fitted parameters anywhere
+*.jpg
+*.jpeg
+*.png
+*.heic
+*.webp
+*.bmp
+*.tif
+*.tiff
+*.svg
+*.obj
+*.npz
+
+# ------------------------------------------------------------
+# Python / environment
+# ------------------------------------------------------------
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# ------------------------------------------------------------
+# OS / editor
+# ------------------------------------------------------------
+.DS_Store
+.idea/
+.vscode/
+
+# ------------------------------------------------------------
+# Published exceptions (must stay last: they override *.png)
+# ------------------------------------------------------------
+
+# Figure: Pixabay face crops (P1-P8, see data/SOURCES.md) + 3D renders.
+# The crops exist only inside this PNG.
+!/results/v2-nowarp/summary_grid_3d.png
+
+# README pipeline figure: P3 face crop (see data/SOURCES.md) + renders.
+# The crop exists only inside this PNG.
+!/docs/pipeline.png

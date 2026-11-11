@@ -1,0 +1,13 @@
+# Python 3.13 (same as GNM Head).
+# Versions are the ones this project was tested with.
+#
+# GNM Head itself is NOT on PyPI. Install it from its own clone, see
+# README "Download required files":
+#   pip install -e "gnm/gnm/shape[pytorch]"
+
+numpy==2.5.3
+torch==2.14.0
+opencv-python==5.0.0.93
+mediapipe==0.10.35
+trimesh==5.1.0
+matplotlib==3.11.1
